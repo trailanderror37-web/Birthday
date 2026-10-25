@@ -1,0 +1,191 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9c9dc">
+  <meta name="description" content="A little birthday surprise made with love.">
+  <title>A Birthday Surprise ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="ambient" aria-hidden="true" id="ambient"></div>
+
+  <main class="site-shell">
+
+    <section class="page active" id="welcome" aria-labelledby="welcomeTitle">
+      <div class="hero-art">
+        <img
+          class="teddy-art"
+          src="assets/Kawaii_Panda_Bear_Birthday_Cake-removebg-preview.png"
+          alt="Two cute teddy bears celebrating beside a birthday cake"
+        >
+        <span class="art-heart heart-one" aria-hidden="true">♥</span>
+        <span class="art-heart heart-two" aria-hidden="true">♡</span>
+      </div>
+
+      <p class="script-kicker">today is all about you</p>
+
+      <h1 id="welcomeTitle">
+        Happy Birthday, <span data-recipient>Anushka</span>!
+        <span class="pink">♡</span>
+      </h1>
+
+      <p class="question">
+        If you’re free, take a little moment to see this through 💗
+      </p>
+
+      <div class="choice-row">
+        <button class="btn btn-primary" id="yesBtn">
+          Yes, of course! <span aria-hidden="true">♡</span>
+        </button>
+
+        <button class="btn btn-quiet" id="noBtn" aria-label="No, not yet">
+          No 🙈
+        </button>
+      </div>
+
+      <p class="tiny-note" id="noNote" aria-live="polite" hidden>
+        Hehe, I think the “No” button wants you to say yes
+      </p>
+    </section>
+
+    <section
+      class="page bouquet-page"
+      id="bouquet"
+      aria-labelledby="bouquetTitle"
+      hidden
+    >
+      <h2 id="bouquetTitle">Rose Bouquet <span aria-hidden="true">♡</span></h2>
+
+      <div class="bouquet-stage">
+        <div class="floating-note note-d">
+          Happy Birthday, <span data-recipient>Anushka</span> 💗
+        </div>
+
+        <div class="floating-note note-a">
+          I’ll always be there for you 🤍
+        </div>
+
+        <div class="floating-note note-e">
+          I'm lucky to have you 🥹
+        </div>
+
+        <div class="floating-note note-c">
+          You are my sunshine ☀️
+        </div>
+
+        <img
+          class="bouquet-art"
+          src="assets/Rose Boque .png"
+          alt="A romantic bouquet of red roses wrapped in cream paper with a red bow"
+        >
+
+        <div class="floating-note note-b">
+          You make my world beautiful
+        </div>
+
+        <div class="floating-note note-f">
+          My favorite person 💕
+        </div>
+
+        <!-- <div class="heart-garden" aria-hidden="true">♥ ♡ ♥ ♡ ♥ ♡ ♥ ♡ ♥</div> -->
+      </div>
+
+      <button class="btn btn-primary continue-btn" data-next="memories">
+        Continue <span aria-hidden="true">→</span>
+      </button>
+    </section>
+
+    <section
+      class="page memories-page"
+      id="memories"
+      aria-labelledby="memoriesTitle"
+      hidden
+    >
+      <h2 id="memoriesTitle">
+        Memories <span aria-hidden="true">📸</span>
+      </h2>
+
+      <!--
+      <p class="section-intro">
+        A few tiny snapshots of the moments I want to keep forever.
+      </p>
+      -->
+
+      <div class="memory-wrap" id="memoryWrap">
+        <div class="polaroid" id="polaroid">
+          <div class="photo-frame" id="photoFrame">
+            <img id="memoryPhoto" src="" alt="">
+
+            <div class="photo-placeholder" id="photoPlaceholder">
+              <span aria-hidden="true">♡</span>
+              <strong>Your photo goes here</strong>
+              <small>Add your memories in <code>script.js</code></small>
+            </div>
+          </div>
+
+          <div class="polaroid-caption">
+            <span class="caption-sparkle" aria-hidden="true">✧</span>
+            <p id="memoryCaption">A memory worth keeping</p>
+            <span class="memory-count" id="memoryCount">1 / 5</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="round-btn" id="prevMemory" aria-label="Previous memory">
+          ←
+        </button>
+
+        <div class="dots" id="memoryDots" aria-label="Choose a memory"></div>
+
+        <button class="round-btn" id="nextMemory" aria-label="Next memory">
+          →
+        </button>
+      </div>
+
+      <button class="btn btn-primary continue-btn" data-next="letter">
+        One more thing… <span aria-hidden="true">→</span>
+      </button>
+    </section>
+
+    <section
+      class="page letter-page"
+      id="letter"
+      aria-labelledby="letterTitle"
+      hidden
+    >
+      <article class="letter-paper">
+        <p class="letter-salutation" id="letterSalutation">
+          Anushka,
+        </p>
+
+        <div class="letter-body" id="letterBody" aria-live="polite"></div>
+        <p class="letter-signoff">From,</p>
+        <p class="letter-sender script" id="letterSender">Your person</p>
+      </article>
+
+      <button class="btn btn-primary" id="replayLetter">
+        Read it again ♡
+      </button>
+
+      <button class="text-btn" id="restartBtn">
+        Start the surprise again ↺
+      </button>
+    </section>
+
+  </main>
+
+  <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
